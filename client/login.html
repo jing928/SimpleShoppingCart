@@ -5,6 +5,8 @@
     <title>Login</title>
 </head>
 <body>
+<div id="welcome"></div>
+<h3>Login Now!</h3>
 <form action="../server/login.php" method="post">
     <label>Username: <input id="user" name="user" type="text"></label>
     <br>
@@ -12,6 +14,13 @@
     <br>
     <button id="submit" type="submit" onclick="hash('pwd')">Login</button>
 </form>
+<p>Don't have an account? <a href="register.html">Register</a></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="javascript/sha256.js"></script>
+<script src="javascript/utils.js"></script>
+<script>
+    $('#welcome').showWelcome()
+</script>
 </body>
 </html>

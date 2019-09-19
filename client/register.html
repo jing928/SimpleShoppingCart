@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
 </head>
 <body>
+<div id="welcome"></div>
+<h3>Register Now!</h3>
 <form action="../server/register.php" method="post">
     <label>Username: <input id="user" name="user" type="text"></label>
     <br>
@@ -12,7 +14,14 @@
     <br>
     <button id="submit" type="submit" onclick="hash('pwd')" disabled>Register</button>
 </form>
+<br>
+<p>Have an account? <a href="login.html">Login</a></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="javascript/sha256.js"></script>
-<script src="javascript/register.js"></script>
+<script src="javascript/utils.js"></script>
+<script>
+    $('#welcome').showWelcome()
+</script>
 </body>
 </html>
