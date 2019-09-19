@@ -7,3 +7,7 @@ function verify_input() {
         button.disabled = true;
     }
 }
+
+$.fn.showWelcome = function () {
+    $('#welcome').load('welcome.html')
+}
