@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php session_start() ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,7 @@
 <body>
 <div id="welcome"></div>
 <h3>Login Now!</h3>
-<form action="../server/login.php" method="post">
+<form action="../server/login_server.php" method="post">
     <label>Username: <input id="user" name="user" type="text"></label>
     <br>
     <label>Password: <input id="pwd" name="pwd" type="password"></label>

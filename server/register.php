@@ -13,4 +13,4 @@ if (user_exists($user)) {
     generate_initial_cart($user);
     echo '<p>Registration successful!</p><br>';
 }
-echo '<a href="../client/login.html">Go to Login</a>';
+echo '<a href="../client/login.php">Go to Login</a>';
