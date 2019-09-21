@@ -1,2 +1,5 @@
 # PhpStorm
 .idea/
+
+# macOS
+.DS_Store
