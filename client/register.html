@@ -10,7 +10,7 @@
 <form action="../server/register.php" method="post">
     <label>Username: <input id="user" name="user" type="text"></label>
     <br>
-    <label>Password: <input id="pwd" name="pwd" type="password" oninput="verify_input()"></label>
+    <label>Password: <input id="pwd" name="pwd" type="password" oninput="verifyInput(this.id)"></label>
     <br>
     <button id="submit" type="submit" onclick="hash('pwd')" disabled>Register</button>
 </form>
