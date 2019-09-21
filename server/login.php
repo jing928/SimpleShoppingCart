@@ -11,6 +11,6 @@ if (!user_exists($user)) {
     echo '<p>Login Successful!</p>';
     # TODO need to redirect to shopping cart
 } else {
-    echo '<p>Incorrent Password.</p><br>';
+    echo '<p>Incorrect Password.</p><br>';
     echo '<a href="../client/login.html">Try Again.</a>';
 }
