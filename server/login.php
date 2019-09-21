@@ -1,21 +1,16 @@
-<?php
+<?php require 'utils.php';
+
 $user = $_POST['user'];
 $pwd = $_POST['pwd'];
 $record = $user . ',' . $pwd;
 
-$file = fopen('../database/users.txt', 'r');
-$match = 0;
-while (!feof($file)) {
-    $line = trim(fgets($file));
-    if ($line == $record) {
-        $match = 1;
-        break;
-    }
-}
-
-fclose($file);
-if ($match == 1) {
+if (!user_exists($user)) {
+    echo '<p>Incorrect Username.</p><br>';
+    echo '<a href="../client/login.html">Try Again.</a>';
+} elseif (verify_login($record)) {
     echo '<p>Login Successful!</p>';
+    # TODO need to redirect to shopping cart
 } else {
-    echo '<p>Login Failed!</p>';
+    echo '<p>Incorrent Password.</p><br>';
+    echo '<a href="../client/login.html">Try Again.</a>';
 }

@@ -14,3 +14,19 @@ function user_exists(string $user): bool
     fclose($file);
     return $exist;
 }
+
+function verify_login(string $record): bool
+{
+    $file = fopen('../database/users.txt', 'r');
+    $match = false;
+    while (!feof($file)) {
+        $line = trim(fgets($file));
+        if ($line == $record) {
+            $match = true;
+            break;
+        }
+    }
+
+    fclose($file);
+    return $match;
+}
