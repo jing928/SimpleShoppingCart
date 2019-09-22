@@ -38,3 +38,15 @@ function generate_initial_cart(string $username)
     fwrite($file, $content . "\n");
     fclose($file);
 }
+
+function get_cart_content(string $user)
+{
+    $file = fopen("../database/cart/{$user}.txt", 'r');
+    return trim(fgets($file));
+}
+
+function rsa_decrypt(string $ciphertext)
+{
+    $private_key = get_rsa_privatekey('./crypto/private.key');
+    return rsa_decryption($ciphertext, $private_key);
+}
