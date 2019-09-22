@@ -1,5 +1,6 @@
 <?php require 'crypto/rsa.php';
-function user_exists(string $user): bool
+
+function user_exists($user)
 {
     $file = fopen('../database/users.txt', 'r');
     $exist = false;
@@ -15,7 +16,7 @@ function user_exists(string $user): bool
     return $exist;
 }
 
-function verify_login(string $record): bool
+function verify_login($record)
 {
     $file = fopen('../database/users.txt', 'r');
     $match = false;
@@ -31,7 +32,7 @@ function verify_login(string $record): bool
     return $match;
 }
 
-function generate_initial_cart(string $username)
+function generate_initial_cart($username)
 {
     $file = fopen("../database/cart/{$username}.txt", 'w+');
     $content = 'Apple:1.99:0,Banana:0.99:0,Carrot:0.49:0';
@@ -39,13 +40,13 @@ function generate_initial_cart(string $username)
     fclose($file);
 }
 
-function get_cart_content(string $user)
+function get_cart_content($user)
 {
     $file = fopen("../database/cart/{$user}.txt", 'r');
     return trim(fgets($file));
 }
 
-function rsa_decrypt(string $ciphertext)
+function rsa_decrypt($ciphertext)
 {
     $private_key = get_rsa_privatekey('./crypto/private.key');
     return rsa_decryption($ciphertext, $private_key);
