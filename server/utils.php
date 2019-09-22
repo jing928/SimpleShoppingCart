@@ -1,4 +1,4 @@
-<?php
+<?php require 'crypto/rsa.php';
 function user_exists(string $user): bool
 {
     $file = fopen('../database/users.txt', 'r');
