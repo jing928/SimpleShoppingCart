@@ -50,3 +50,9 @@ function rsa_decrypt(string $ciphertext)
     $private_key = get_rsa_privatekey('./crypto/private.key');
     return rsa_decryption($ciphertext, $private_key);
 }
+
+function redirect($path)
+{
+    header('Location: ' . $path);
+    exit();
+}
