@@ -1,7 +1,7 @@
-function verifyInput(field_value) {
+function verifyInput(field_value, length) {
     let value = document.getElementById(field_value).value
     let button = document.getElementById('submit')
-    if (value.length >= 6) {
+    if (value.length >= length) {
         button.disabled = false
     } else {
         button.disabled = true;
