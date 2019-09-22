@@ -2,5 +2,6 @@
 require 'utils.php';
 
 session_destroy();
+$_SESSION = [];
 redirect('../client/login.html');
 
