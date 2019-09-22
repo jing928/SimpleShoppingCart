@@ -1,5 +1,5 @@
-// Modified from the code provided by the teaching team of the Secure Electronic Commerce
 <?php
+// Modified from the code provided by the teaching team of the Secure Electronic Commerce
 
 function get_rsa_publickey($filename)
 {

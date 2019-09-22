@@ -1,5 +1,5 @@
-// Modified from the code provided by the teaching team of the Secure Electronic Commerce
 <?php
+// Modified from the code provided by the teaching team of the Secure Electronic Commerce
 
 //PHP version
 //Paul Tero, July 2001
