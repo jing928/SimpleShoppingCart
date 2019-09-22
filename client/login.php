@@ -21,6 +21,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="javascript/sha256.js"></script>
+<script src="javascript/rsa.js"></script>
 <script src="javascript/utils.js"></script>
 <script>
     $('#welcome').showWelcome()
