@@ -33,8 +33,8 @@ function verify_login(string $record): bool
 
 function generate_initial_cart(string $username)
 {
-    $file = fopen('../database/cart.txt', 'a');
-    $content = "{$username}:Apple:1.99:0:Banana:0.99:0:Carrot:0.49:0";
+    $file = fopen("../database/cart/{$username}.txt", 'w+');
+    $content = 'Apple:1.99:0,Banana:0.99:0,Carrot:0.49:0';
     fwrite($file, $content . "\n");
     fclose($file);
 }
