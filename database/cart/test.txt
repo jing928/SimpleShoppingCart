@@ -1,1 +1,1 @@
-Apple:1.99:0,Banana:0.99:0,Carrot:0.49:0
+Apple:1.99:1,Banana:0.99:1,Carrot:0.49:2
