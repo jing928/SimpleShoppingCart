@@ -1,11 +1,7 @@
 function verifyInput(field_value, length) {
-    let value = document.getElementById(field_value).value
-    let button = document.getElementById('submit')
-    if (value.length >= length) {
-        button.disabled = false
-    } else {
-        button.disabled = true;
-    }
+    let value = document.getElementById(field_value).value;
+    let button = document.getElementById('submit');
+    button.disabled = value.length < length;
 }
 
 $.fn.showWelcome = function () {
