@@ -1,4 +1,10 @@
 <?php session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: login.html');
+    exit();
+}
+
 $user = $_SESSION['user'];
 $key = $_SESSION['key'];
 $cart = $_SESSION['cart'];

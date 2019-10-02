@@ -2,6 +2,10 @@
 require 'crypto/des.php';
 require 'utils.php';
 
+if (!isset($_SESSION['user'])) {
+    redirect('../client/login.html');
+}
+
 $key = $_SESSION['key'];
 $user = $_SESSION['user'];
 
