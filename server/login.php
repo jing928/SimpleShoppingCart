@@ -1,6 +1,10 @@
 <?php session_start();
 require 'utils.php';
 
+if (!isset($_POST['user'])) {
+    redirect('../client/login.html');
+}
+
 $user = $_POST['user'];
 $pwd = $_POST['pwd'];
 $key = $_POST['key'];

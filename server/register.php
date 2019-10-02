@@ -1,5 +1,9 @@
 <?php require 'utils.php';
 
+if (!isset($_POST['user'])) {
+    redirect('../client/login.html');
+}
+
 $user = $_POST['user'];
 
 if (user_exists($user)) {
