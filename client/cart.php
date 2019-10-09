@@ -72,7 +72,7 @@ echo '</form>';
         let subTotalID = idBase + 's';
         let priceValue = Number(document.getElementById(priceID).innerText);
         let quantityValue = Number(document.getElementById(quantID).value);
-        document.getElementById(subTotalID).value = priceValue * quantityValue;
+        document.getElementById(subTotalID).value = (priceValue * quantityValue).toFixed(2).toString();
     }
 
     function updateTotal(numOfProds) {
