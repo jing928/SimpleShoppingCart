@@ -7,6 +7,7 @@ if (!isset($_SESSION['user'])) {
 
 $user = $_SESSION['user'];
 $cart = $_SESSION['cart'];
+$credit_card = $_SESSION['cc'];
 
 $products = explode(',', $cart);
 echo '<h1>Hi ', $user, '! Here Is Your Shopping Cart!</h1>';
@@ -54,7 +55,7 @@ echo "
     <tr>
         <td>Credit Card Number: </td>
         <td>
-            <input id='cc' name='cc' type='text' oninput='validateInputs()'>
+            <input id='cc' name='cc' type='text' value='{$credit_card}' oninput='validateInputs()'>
         </td>
     </tr>
     <tr>

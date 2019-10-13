@@ -60,6 +60,17 @@ function save_credit_card($user, $card_number)
     fclose($file);
 }
 
+function get_credit_card($user)
+{
+    $path = "../database/credit_card/{$user}.txt";
+    if (file_exists($path)) {
+        $file = fopen($path, 'r');
+        return trim(fgets($file));
+    } else {
+        return "";
+    }
+}
+
 function rsa_decrypt($ciphertext)
 {
     $private_key = get_rsa_privatekey('./crypto/private.key');

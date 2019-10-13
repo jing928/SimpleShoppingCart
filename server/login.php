@@ -15,7 +15,9 @@ if (!user_exists($user)) {
 } elseif (verify_login($record)) {
     $_SESSION['user'] = $user;
     $cart_content = get_cart_content($user);
+    $credit_card = get_credit_card($user);
     $_SESSION['cart'] = $cart_content;
+    $_SESSION['cc'] = $credit_card;
     redirect('../client/cart.php');
 } else {
     echo '<p>Incorrect Password.</p><br>';
