@@ -54,13 +54,13 @@ echo "
     <tr>
         <td>Credit Card Number: </td>
         <td>
-            <input id='cc' name='cc' type='text' oninput='verifyInput(this.id, 16)'>
+            <input id='cc' name='cc' type='text' oninput='validateInputs()'>
         </td>
     </tr>
     <tr>
         <td>Key: </td>
         <td>
-            <input id='key' name='key' type='password' oninput='verifyInput(this.id, 6)'>
+            <input id='key' name='key' type='password' oninput='validateInputs()'>
         </td>
     </tr>
 </table>
@@ -129,5 +129,13 @@ echo '</form>';
             products.push(name + ':' + price + ':' + quant);
         }
         return products.join(',');
+    }
+
+    function validateInputs() {
+        let cc = document.getElementById("cc").value;
+        let key = document.getElementById("key").value;
+        let notCCValid = cc.length !== 16;
+        let notKeyValid = key.length < 6;
+        document.getElementById("submit").disabled = notCCValid || notKeyValid;
     }
 </script>
