@@ -55,7 +55,9 @@ The user can verify everything is correct and then choose to logout. If the user
 
 ## Data Flow
 
+A detailed data flow diagram is as follows:
 
+![dfd](report_images/dfd.png)
 
 
 
