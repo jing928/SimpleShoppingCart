@@ -4,10 +4,6 @@ function verifyInput(field_value, length) {
     button.disabled = value.length < length;
 }
 
-$.fn.showWelcome = function () {
-    $('#welcome').load('welcome.html')
-};
-
 const pubKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AM" +
     "IIBCgKCAQEAzdxaei6bt/xIAhYsdFdW62CGTpRX+GXoZkzqvbf5oOxw4wKENjFX7LsqZX" +
     "xdFfoRxEwH90zZHLHgsNFzXe3JqiRabIDcNZmKS2F0A7+Mwrx6K2fZ5b7E2fSLFbC7Fsv" +
