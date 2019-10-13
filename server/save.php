@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
     redirect('../client/login.html');
 }
 
-$key = $_SESSION['key'];
+$key = rsa_decrypt($_POST['key']);
 $user = $_SESSION['user'];
 
 $content = php_des_decryption($key, $_POST['content']);

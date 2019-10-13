@@ -6,7 +6,6 @@ if (!isset($_SESSION['user'])) {
 }
 
 $user = $_SESSION['user'];
-$key = $_SESSION['key'];
 $cart = $_SESSION['cart'];
 
 $products = explode(',', $cart);
@@ -50,15 +49,31 @@ echo "
 </table>";
 
 echo '<br>';
-echo "<label>Credit Card Number: <input id='cc' name='cc' type='text' oninput='verifyInput(this.id, 16)'></label>";
-echo '<br><br>';
+echo "
+<table>
+    <tr>
+        <td>Credit Card Number: </td>
+        <td>
+            <input id='cc' name='cc' type='text' oninput='verifyInput(this.id, 16)'>
+        </td>
+    </tr>
+    <tr>
+        <td>Key: </td>
+        <td>
+            <input id='key' name='key' type='password' oninput='verifyInput(this.id, 6)'>
+        </td>
+    </tr>
+</table>
+";
+echo '<br>';
 echo '<input id="content" name="content" type="hidden" value="">';
-echo "<button id='submit' type='submit' onclick='processSubmit(\"$num_of_products\", \"$key\")' disabled>Submit</button>";
+echo "<button id='submit' type='submit' onclick='processSubmit(\"$num_of_products\")' disabled>Submit</button>";
 echo '</form>';
 ?>
 
 <script src="javascript/utils.js"></script>
 <script src="javascript/des.js"></script>
+<script src="javascript/rsa.js"></script>
 <script>
     function update(prodNum, numOfProds) {
         updateSubTotal(prodNum);
@@ -89,13 +104,16 @@ echo '</form>';
         document.getElementById('total_p').innerHTML = totalPrice.toFixed(2).toString();
     }
 
-    function processSubmit(numOfProds, encryptionKey) {
+    function processSubmit(numOfProds) {
+        let keyField = document.getElementById('key');
+        let key = keyField.value;
         let content = serializeProducts(numOfProds);
         let creditCard = document.getElementById('cc').value;
-        let encryptedContent = javascript_des_encryption(encryptionKey, content);
-        let encryptedCreditCard = javascript_des_encryption(encryptionKey, creditCard);
+        let encryptedContent = javascript_des_encryption(key, content);
+        let encryptedCreditCard = javascript_des_encryption(key, creditCard);
         document.getElementById('content').value = encryptedContent;
         document.getElementById('cc').value = encryptedCreditCard;
+        keyField.value = rsaEncrypt(key);
     }
 
     function serializeProducts(numOfProds) {
