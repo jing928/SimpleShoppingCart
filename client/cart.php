@@ -32,9 +32,9 @@ foreach ($products as $product) {
     <tr>
         <td id='p{$index}n'>{$name}</td>
         <td id='p{$index}p'>{$price}</td>
-        <td><input id='p{$index}q' name='p{$index}q' type='number' value={$quantity} min='0' max='10' 
+        <td><input id='p{$index}q' type='number' value={$quantity} min='0' max='10' 
         aria-labelledby='quant' oninput='update(\"$index\", \"$num_of_products\")'></td>
-        <td><input id='p{$index}s' name='p{$index}s' readonly value= {$subtotal}></td>
+        <td><input id='p{$index}s' readonly value= {$subtotal}></td>
     </tr>";
     $index++;
     $total_q += $quantity;
