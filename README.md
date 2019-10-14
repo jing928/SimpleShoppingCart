@@ -1,4 +1,4 @@
-# SimpleShoppingCart
+# Simple Shopping Cart
 **by Jing Li s3676458**
 
 ## Introduction
